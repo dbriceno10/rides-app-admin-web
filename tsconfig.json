@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES6", // Define a qué versión de JavaScript se compila el código.
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ], // Usa las definiciones de tipos para el entorno del navegador y ESNext.
+    "allowJs": true, // Permite importar archivos JavaScript en el proyecto.
+    "skipLibCheck": true, // Omitir la verificación de tipos en archivos de declaración.
+    "strict": true, // Habilita todas las verificaciones estrictas de TypeScript.
+    "forceConsistentCasingInFileNames": true, // Asegura que los nombres de los archivos sean tratados de manera consistente.
+    /* Module Resolution Options */
+    "module": "ESNext", // Usa ESNext para el sistema de módulos.
+    "moduleResolution": "node", // Usa la resolución de módulos basada en Node.js.
+    "esModuleInterop": true, // Habilita la interoperabilidad con ES Modules, permitiendo importaciones predeterminadas.
+    "resolveJsonModule": true, // Permite la importación de archivos JSON.
+    "isolatedModules": true, // Asegura que cada archivo se trate como un módulo independiente.
+    /* JSX Options */
+    "jsx": "react-jsx", // Usa la nueva transformación JSX (React 17+).
+    /* Source Map Options */
+    "sourceMap": true, // Genera archivos source maps.
+    /* Experimental Options */
+    "incremental": true, // Habilita la compilación incremental para mejorar el rendimiento.
+    /* Paths and Directories */
+    "baseUrl": ".", // Define la base de las rutas relativas.
+    "paths": { // Configura alias de módulos.
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@views/*": [
+        "src/views/*"
+      ],
+      "@layouts/*": [
+        "src/layouts/*"
+      ],
+      "@variables/*": [
+        "src/variables/*"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ]
+    },
+    /* Output Options */
+    "outDir": "build", // Define la carpeta donde se generarán los archivos compilados.
+    "noEmit": true // No emite archivos cuando se ejecuta el compilador TypeScript.
+  },
+  "include": [
+    "src/**/*"
+  ], // Incluye todos los archivos de la carpeta `src`.
+  "exclude": [
+    "node_modules",
+    "build"
+  ] // Excluye la carpeta `node_modules` y la carpeta de salida `build`.
+}
