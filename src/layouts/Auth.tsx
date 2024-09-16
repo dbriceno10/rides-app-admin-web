@@ -21,13 +21,13 @@ import { useLocation, Route, Routes, Navigate } from "react-router-dom";
 import { Container, Row, Col } from "reactstrap";
 
 // core components
-import AuthNavbar from "@components/Navbars/AuthNavbar";
-import AuthFooter from "@components/Footers/AuthFooter";
+import AuthNavbar from "src/components/Navbars/AuthNavbar";
+import AuthFooter from "src/components/Footers/AuthFooter";
 
 import routes from "../routes";
 
 const Auth = (props) => {
-  const mainContent = React.useRef(null);
+  const mainContent = React.useRef<any>(null);
   const location = useLocation();
 
   React.useEffect(() => {
@@ -37,17 +37,22 @@ const Auth = (props) => {
     };
   }, []);
   React.useEffect(() => {
-    document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
+    if (document.documentElement) {
+      document.documentElement.scrollTop = 0;
+    }
+    if (document.scrollingElement) {
+      document.scrollingElement.scrollTop = 0;
+    }
+    if (mainContent.current) {
+      mainContent.current.scrollTop = 0;
+    }
     mainContent.current.scrollTop = 0;
   }, [location]);
 
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.layout === "/auth") {
-        return (
-          <Route path={prop.path} element={prop.component} key={key} exact />
-        );
+        return <Route path={prop.path} element={prop.component} key={key} />;
       } else {
         return null;
       }

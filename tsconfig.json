@@ -17,6 +17,7 @@
     "esModuleInterop": true, // Habilita la interoperabilidad con ES Modules, permitiendo importaciones predeterminadas.
     "resolveJsonModule": true, // Permite la importación de archivos JSON.
     "isolatedModules": true, // Asegura que cada archivo se trate como un módulo independiente.
+    "noImplicitAny": false,                         // Permite el uso implícito de `any`
     /* JSX Options */
     "jsx": "react-jsx", // Usa la nueva transformación JSX (React 17+).
     /* Source Map Options */
@@ -25,26 +26,26 @@
     "incremental": true, // Habilita la compilación incremental para mejorar el rendimiento.
     /* Paths and Directories */
     "baseUrl": ".", // Define la base de las rutas relativas.
-    "paths": { // Configura alias de módulos.
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@views/*": [
-        "src/views/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
-      "@variables/*": [
-        "src/variables/*"
-      ],
-      "@assets/*": [
-        "src/assets/*"
-      ],
-      "@services/*": [
-        "src/services/*"
-      ]
-    },
+    // "paths": { // Configura alias de módulos.
+    //   "@components/*": [
+    //     "src/components/*"
+    //   ],
+    //   "@views/*": [
+    //     "src/views/*"
+    //   ],
+    //   "@layouts/*": [
+    //     "src/layouts/*"
+    //   ],
+    //   "@variables/*": [
+    //     "src/variables/*"
+    //   ],
+    //   "@assets/*": [
+    //     "src/assets/*"
+    //   ],
+    //   "@services/*": [
+    //     "src/services/*"
+    //   ]
+    // },
     /* Output Options */
     "outDir": "build", // Define la carpeta donde se generarán los archivos compilados.
     "noEmit": true // No emite archivos cuando se ejecuta el compilador TypeScript.

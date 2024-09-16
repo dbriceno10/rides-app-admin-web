@@ -16,13 +16,13 @@
 
 */
 
-import Index from "@views/Index";
-import Profile from "@views/examples/Profile";
-import Maps from "@views/examples/Maps";
-import Register from "@views/examples/Register";
-import Login from "@views/examples/Login";
-import Tables from "@views/examples/Tables";
-import Icons from "@views/examples/Icons";
+import Index from "src/views/Index";
+import Profile from "src/views/examples/Profile";
+import Maps from "src/views/examples/Maps";
+import Register from "src/views/examples/Register";
+import Login from "src/views/examples/Login";
+import Tables from "src/views/examples/Tables";
+import Icons from "src/views/examples/Icons";
 
 const routes = [
   {

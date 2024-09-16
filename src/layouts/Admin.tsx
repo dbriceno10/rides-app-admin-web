@@ -20,28 +20,30 @@ import { useLocation, Route, Routes, Navigate } from "react-router-dom";
 // reactstrap components
 import { Container } from "reactstrap";
 // core components
-import AdminNavbar from "@components/Navbars/AdminNavbar";
-import AdminFooter from "@components/Footers/AdminFooter";
-import Sidebar from "@components/Sidebar/Sidebar";
+import AdminNavbar from "src/components/Navbars/AdminNavbar";
+import AdminFooter from "src/components/Footers/AdminFooter";
+import Sidebar from "src/components/Sidebar/Sidebar";
 
-import routes from "routes";
+import routes from "../routes";
 
 const Admin = (props) => {
-  const mainContent = React.useRef(null);
+  const mainContent = React.useRef<any>(null);
   const location = useLocation();
 
   React.useEffect(() => {
     document.documentElement.scrollTop = 0;
-    document.scrollingElement.scrollTop = 0;
-    mainContent.current.scrollTop = 0;
+    if (document.scrollingElement) {
+      document.scrollingElement.scrollTop = 0;
+    }
+    if (mainContent.current) {
+      mainContent.current.scrollTop = 0;
+    }
   }, [location]);
 
   const getRoutes = (routes) => {
     return routes.map((prop, key) => {
       if (prop.layout === "/admin") {
-        return (
-          <Route path={prop.path} element={prop.component} key={key} exact />
-        );
+        return <Route path={prop.path} element={prop.component} key={key} />;
       } else {
         return null;
       }

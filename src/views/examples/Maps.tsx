@@ -21,12 +21,13 @@ import React from "react";
 import { Card, Container, Row } from "reactstrap";
 
 // core components
-import Header from "components/Headers/Header";
+import Header from "src/components/Headers/Header";
 
 const MapWrapper = () => {
   const mapRef = React.useRef(null);
+  const newWindow: any = window;
   React.useEffect(() => {
-    let google = window.google;
+    let google = newWindow.google;
     let map = mapRef.current;
     let lat = "40.748817";
     let lng = "-73.985428";

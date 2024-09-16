@@ -44,9 +44,9 @@ import {
   parseOptions,
   chartExample1,
   chartExample2,
-} from "@variables/charts";
+} from "src/variables/charts";
 
-import Header from "@components/Headers/Header";
+import Header from "src/components/Headers/Header";
 
 const Index = (props) => {
   const [activeNav, setActiveNav] = useState(1);
